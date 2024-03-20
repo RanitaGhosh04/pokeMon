@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Hi+Melody&display=swap');
+
+body{
+    font-family: "Hi Melody", sans-serif;
+}
+#pokemon-card-container{
+    display: flex;
+    flex-wrap: wrap;
+}
+.card-inner{
+    /* border: 2px solid black; */
+    width: 190px;
+    position: relative;
+    height: 280px;
+    margin: 10px;
+    border-radius: 15px;
+
+    transition: all 0.9s ease;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1); /* Added box shadow */
+}
+
+.card-front{
+    border: 10px double white;
+    /* padding-bottom: 15px; */
+    position: relative;
+    z-index: 2;
+    transition: opacity 0.9s ease;
+}
+
+.card-back{
+    border: 10px double white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: rotateY(-180deg) perspective(1000px);
+    z-index: 1;
+    width: 170px;
+}
+
+.card-inner:hover .card-back {
+    opacity: 1; 
+    transform: rotateY(0deg); 
+}
+.card-inner:hover .card-front {
+    opacity: 0; 
+}
+.card-front, .card-back {
+    height: 260px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border-radius: 10px;
+}
+
+
+.id{
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 10px;
+    background-color: #fffd01;
+    margin-top: 10px;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    padding-bottom: 9px;
+    /* border-radius: 8px; */
+    font-variant-numeric: oldstyle-nums;
+    font-size: large;
+    font-weight: bold;
+    color: white;
+}
+
+.name{
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.type{
+   padding-bottom: 2px;
+   height: 100%;
+   text-transform: capitalize;
+   color: white;
+}
+
+h1{
+    text-align: center;
+}
+
+.divClass{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+select,button,input,a{
+    height: 38px;
+    width: 150px;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 50px;
+    border: none;
+    background-color: #e7e76a;
+    font-weight: bold;
+    color: white;
+    font-family: "Hi Melody", sans-serif;
+    font-size: large;
+
+}
+
+input{
+    height: 33px;
+}
+
+.abilities{
+    text-transform: capitalize;
+    border-radius: 5px;
+    color: white;
+}
+
+h1{
+    color: rgb(20, 20, 229);
+    animation: bounce 0.5s infinite alternate;
+    font-size: 440%;
+    margin-bottom: -8px;
+}
+
+@keyframes bounce {
+    0% {
+      transform: translateY(0); /* Start position */
+    }
+    100% {
+      transform: translateY(-5px); /* End position */
+    }
+  }
+
+.pika{
+    /* border: 2px solid black; */
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    left: 7%;
+    top: 8.2%;
+}
+
+
+header{
+    /* border: 2px solid black; */
+    display: inline-block;
+    text-align: center;
+    margin-left: 28.3%;
+    /* margin-right: auto; */
+    position: relative;
+    background-color: rgb(228, 228, 186);
+    border-radius: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 0 0 3px rgba(255, 255, 255, 0.2), 0 2px 4px rgba(0, 0, 0, 0.1);
+    border: 10px double #e7e76a;
+}
+
+select:hover, button:hover, input:hover, a:hover {
+    background-color: #ff8080; /* Change the background color on hover */
+}
+
+
+.pika-right {
+    height: 100px;
+    width: 200px;
+    position: absolute;
+    right: 7%;
+    top: 8.2%;
+    transform: rotateY(180deg); /* Rotate the image to the right */
+}
